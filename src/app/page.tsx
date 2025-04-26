@@ -2,7 +2,8 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Apple, Smartphone, ShieldCheck } from 'lucide-react'; // Icons
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"; // Import Alert
+import { Apple, Smartphone, ShieldCheck, Rocket } from 'lucide-react'; // Icons
 import Header from '@/components/layout/header'; // Import Header
 import Footer from '@/components/layout/footer'; // Import Footer
 
@@ -11,11 +12,22 @@ const Home: NextPage = () => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow container mx-auto px-4 py-12">
-        <section className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">Welcome to Mobile Security.site Hub</h1>
+        <section className="text-center mb-12">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">Welcome to MobileSecurity.site Hub</h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Your central source for information and resources on mobile security across different platforms. Explore dedicated sections for Apple, Android, and our specialized Titanium security solutions.
           </p>
+        </section>
+
+        {/* Coming Soon Banner */}
+        <section className="mb-12">
+          <Alert className="border-primary text-center bg-card">
+            <Rocket className="h-5 w-5 text-primary" />
+            <AlertTitle className="font-bold text-lg text-primary">Coming Soon!</AlertTitle>
+            <AlertDescription className="text-muted-foreground">
+              Titanium.MobileSecurity.site - Our advanced security platform is launching soon. Stay tuned!
+            </AlertDescription>
+          </Alert>
         </section>
 
         <section className="grid grid-cols-1 md:grid-cols-3 gap-8">

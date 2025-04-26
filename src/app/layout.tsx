@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster"; // Import Toaster
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
 export const metadata: Metadata = {
-  title: 'Mobile Security.site Hub',
+  title: 'MobileSecurity.site Hub', // Updated title
   description: 'Your central hub for mobile security information.',
 };
 

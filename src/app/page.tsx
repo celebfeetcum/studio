@@ -4,6 +4,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/com
 import { Button } from '@/components/ui/button';
 import { Apple, Smartphone, ShieldCheck } from 'lucide-react'; // Icons
 import Header from '@/components/layout/header'; // Import Header
+import Footer from '@/components/layout/footer'; // Import Footer
 
 const Home: NextPage = () => {
   return (
@@ -11,7 +12,7 @@ const Home: NextPage = () => {
       <Header />
       <main className="flex-grow container mx-auto px-4 py-12">
         <section className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">Welcome to Mobile Security Hub</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">Welcome to Mobile Security.site Hub</h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Your central source for information and resources on mobile security across different platforms. Explore dedicated sections for Apple, Android, and our specialized Titanium security solutions.
           </p>
@@ -77,15 +78,5 @@ const Home: NextPage = () => {
     </div>
   );
 };
-
-// Simple Footer Component
-const Footer = () => (
-  <footer className="w-full py-6 px-4 md:px-6 border-t border-border bg-card">
-    <div className="container mx-auto text-center text-muted-foreground text-sm">
-      &copy; {new Date().getFullYear()} Mobile Security Hub. All rights reserved.
-    </div>
-  </footer>
-);
-
 
 export default Home;

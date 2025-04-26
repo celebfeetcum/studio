@@ -13,7 +13,7 @@ const Header = () => {
       <div className="container mx-auto flex h-14 max-w-screen-2xl items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2" prefetch={false}>
           <Shield className="h-6 w-6 text-primary" />
-          <span className="font-bold inline-block">Mobile Security Hub</span>
+          <span className="font-bold inline-block">Mobile Security.site Hub</span>
         </Link>
 
         <NavigationMenu>

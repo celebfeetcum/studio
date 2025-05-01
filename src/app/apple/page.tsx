@@ -56,7 +56,7 @@ const ApplePage: NextPage = () => {
                 <FileText className="w-6 h-6 text-secondary" /> Download: Apple iOS Security Enhancer
               </CardTitle>
               <CardDescription>
-                 Elevate your iOS 16+ device security effortlessly.
+                 Elevate your iOS 16+ device security effortlessly. LAUNCHING [terms date]
               </CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col items-start space-y-4">

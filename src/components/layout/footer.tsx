@@ -8,8 +8,8 @@ const Footer = () => (
         <span className="mt-1">W.N.H.-Executive Admin</span>
       </div>
       <div className="text-center md:text-right">
-        <p className="mb-1">Check out our partner:</p>
-        <Link href="https://hoxt.site" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary underline transition-colors">
+        <p className="mb-1">Explore our free hosting solutions:</p> {/* Updated text */}
+        <Link href="http://hoxt.site" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-primary underline transition-colors"> {/* Updated href */}
           hoxt.site: Free web-hosting, premium add-ons, domain registration. Bring your own domain FREE!
         </Link>
         <p className="text-xs mt-1">(Use nameservers: ns1.hoxt.site, ns2.hoxt.site)</p>

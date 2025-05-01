@@ -68,7 +68,7 @@ const ApplePage: NextPage = () => {
                     <li>Seamless integration with Apple's network</li>
                   </ul>
                   <p>No advanced security operations knowledge required.</p>
-                  <p>One-click install - valid email needed.</p>
+                  <p>One-click install - all you need is a valid email for your device *</p>
                </div>
               {/* Link the button to the Google Drive file */}
               <Button

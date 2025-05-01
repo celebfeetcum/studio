@@ -53,28 +53,35 @@ const ApplePage: NextPage = () => {
           <Card className="bg-card text-card-foreground">
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-2xl">
-                <FileText className="w-6 h-6 text-secondary" /> Downloadable Resources
+                <FileText className="w-6 h-6 text-secondary" /> Download: Apple iOS Security Enhancer
               </CardTitle>
               <CardDescription>
-                 Access our comprehensive guide on securing your Apple devices.
+                 Elevate your iOS 16+ device security effortlessly.
               </CardDescription>
             </CardHeader>
-            <CardContent className="flex flex-col items-center justify-center space-y-4 h-full">
-               <p className="text-muted-foreground text-center">
-                 Download our latest security whitepaper for in-depth information.
-               </p>
+            <CardContent className="flex flex-col items-start space-y-4">
+               <div className="text-muted-foreground text-sm space-y-2">
+                  <p>Our debut tool integrates Apple's certified Tailscale technology to fortify your backend, ensuring:</p>
+                  <ul className="list-disc list-inside pl-4 space-y-1">
+                    <li>Backdoor hacking prevention</li>
+                    <li>Remote port invisibility</li>
+                    <li>Seamless integration with Apple's network</li>
+                  </ul>
+                  <p>No advanced security operations knowledge required.</p>
+                  <p>One-click install - valid email needed.</p>
+               </div>
               {/* Link the button to the Google Drive file */}
               <Button
                 asChild
                 variant="secondary"
                 size="lg"
-                className="hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="hover:bg-accent hover:text-accent-foreground transition-colors mt-4 self-center"
               >
                 <a href={googleDriveLink} target="_blank" rel="noopener noreferrer">
-                  <Download className="mr-2 h-5 w-5" /> Download Guide (PDF)
+                  <Download className="mr-2 h-5 w-5" /> Download Enhancer (PDF)
                 </a>
               </Button>
-               <p className="text-xs text-muted-foreground text-center mt-2">
+               <p className="text-xs text-muted-foreground text-center mt-2 self-center">
                 Note: This will open a Google Drive link in a new tab.
                </p>
             </CardContent>

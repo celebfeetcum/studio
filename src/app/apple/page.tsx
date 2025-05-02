@@ -90,7 +90,7 @@ const ApplePage: NextPage = () => {
                 </a>
               </Button>
                <p className="text-xs text-muted-foreground text-center mt-2">
-                Note: This link will open in a new tab.
+                 Note: This link will open a tab to a Google Drive file.
                </p>
             </CardContent>
           </Card>

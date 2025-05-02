@@ -11,39 +11,41 @@ const Home: NextPage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow container mx-auto px-4 py-12">
-        <section className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">Welcome to MobileSecurity.site Hub</h1>
+      <main className="flex-grow container mx-auto px-4 py-16 md:py-20"> {/* Increased padding */}
+        <section className="text-center mb-16 md:mb-20"> {/* Increased margin */}
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-primary">Welcome to MobileSecurity.site Hub</h1> {/* Increased size and margin */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Your central source for information and resources on mobile security across different platforms. Explore dedicated sections for Apple, Android, and our specialized Titanium security solutions.
           </p>
         </section>
 
         {/* Coming Soon Banner */}
-        <section className="mb-12">
-          <Alert className="border-primary text-center bg-card">
-            <Rocket className="h-5 w-5 text-primary" />
-            <AlertTitle className="font-bold text-lg text-primary">Coming Soon!</AlertTitle>
+        <section className="mb-16 md:mb-20"> {/* Increased margin */}
+          {/* Updated Alert styling */}
+          <Alert className="border-primary/50 text-center bg-gradient-to-r from-card via-primary/10 to-card p-6 rounded-lg">
+            <Rocket className="h-6 w-6 text-primary mx-auto mb-2" /> {/* Centered icon */}
+            <AlertTitle className="font-bold text-xl text-primary mb-1">Coming Soon!</AlertTitle> {/* Increased size */}
             <AlertDescription className="text-muted-foreground">
               Titanium.MobileSecurity.site - Our advanced security platform is launching soon. Stay tuned!
             </AlertDescription>
           </Alert>
         </section>
 
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <section className="grid grid-cols-1 md:grid-cols-3 gap-10"> {/* Increased gap */}
           {/* Apple Section */}
           <Link href="/apple" passHref>
-            <Card className="hover:shadow-lg hover:border-secondary transition-all duration-300 cursor-pointer bg-card text-card-foreground flex flex-col h-full">
-              <CardHeader className="flex flex-row items-center gap-4 pb-2">
-                 <Apple className="w-10 h-10 text-secondary" />
+            {/* Enhanced hover effect */}
+            <Card className="hover:shadow-xl hover:border-secondary/80 hover:scale-[1.02] transition-all duration-300 cursor-pointer bg-card text-card-foreground flex flex-col h-full overflow-hidden rounded-lg">
+              <CardHeader className="flex flex-row items-center gap-4 p-6 pb-3"> {/* Adjusted padding */}
+                 <Apple className="w-12 h-12 text-secondary" /> {/* Increased icon size */}
                 <CardTitle className="text-2xl font-semibold">Apple Security</CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow">
+              <CardContent className="flex-grow p-6 pt-0"> {/* Adjusted padding */}
                 <CardDescription className="text-muted-foreground">
                   Discover security features, best practices, and downloadable resources specific to Apple's iOS and macOS ecosystems.
                 </CardDescription>
               </CardContent>
-              <div className="p-6 pt-0">
+              <div className="p-6 pt-0 mt-auto"> {/* Ensure button is at the bottom */}
                  <Button variant="secondary" className="w-full">Explore Apple</Button>
               </div>
             </Card>
@@ -51,17 +53,17 @@ const Home: NextPage = () => {
 
           {/* Android Section */}
           <Link href="/android" passHref>
-             <Card className="hover:shadow-lg hover:border-secondary transition-all duration-300 cursor-pointer bg-card text-card-foreground flex flex-col h-full">
-              <CardHeader className="flex flex-row items-center gap-4 pb-2">
-                <Smartphone className="w-10 h-10 text-secondary" />
+             <Card className="hover:shadow-xl hover:border-secondary/80 hover:scale-[1.02] transition-all duration-300 cursor-pointer bg-card text-card-foreground flex flex-col h-full overflow-hidden rounded-lg">
+              <CardHeader className="flex flex-row items-center gap-4 p-6 pb-3"> {/* Adjusted padding */}
+                <Smartphone className="w-12 h-12 text-secondary" /> {/* Increased icon size */}
                 <CardTitle className="text-2xl font-semibold">Android Security</CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow">
+              <CardContent className="flex-grow p-6 pt-0"> {/* Adjusted padding */}
                 <CardDescription className="text-muted-foreground">
                   Learn about Android's security architecture, common threats, and how to keep your Android devices safe.
                 </CardDescription>
               </CardContent>
-               <div className="p-6 pt-0">
+               <div className="p-6 pt-0 mt-auto"> {/* Ensure button is at the bottom */}
                  <Button variant="secondary" className="w-full">Explore Android</Button>
               </div>
             </Card>
@@ -69,17 +71,17 @@ const Home: NextPage = () => {
 
           {/* Titanium Section */}
           <Link href="/titanium" passHref>
-             <Card className="hover:shadow-lg hover:border-secondary transition-all duration-300 cursor-pointer bg-card text-card-foreground flex flex-col h-full">
-              <CardHeader className="flex flex-row items-center gap-4 pb-2">
-                 <ShieldCheck className="w-10 h-10 text-secondary" />
+             <Card className="hover:shadow-xl hover:border-secondary/80 hover:scale-[1.02] transition-all duration-300 cursor-pointer bg-card text-card-foreground flex flex-col h-full overflow-hidden rounded-lg">
+              <CardHeader className="flex flex-row items-center gap-4 p-6 pb-3"> {/* Adjusted padding */}
+                 <ShieldCheck className="w-12 h-12 text-secondary" /> {/* Increased icon size */}
                 <CardTitle className="text-2xl font-semibold">Titanium Security</CardTitle>
               </CardHeader>
-              <CardContent className="flex-grow">
+              <CardContent className="flex-grow p-6 pt-0"> {/* Adjusted padding */}
                 <CardDescription className="text-muted-foreground">
                   Explore our advanced Titanium security solutions designed for enhanced protection and privacy.
                 </CardDescription>
               </CardContent>
-               <div className="p-6 pt-0">
+               <div className="p-6 pt-0 mt-auto"> {/* Ensure button is at the bottom */}
                  <Button variant="secondary" className="w-full">Explore Titanium</Button>
               </div>
             </Card>

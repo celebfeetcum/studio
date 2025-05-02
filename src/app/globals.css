@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: var(--font-geist-sans), sans-serif;
+  font-family: var(--font-inter), sans-serif; /* Ensure consistent font usage */
 }
 
 @layer base {
@@ -32,7 +32,7 @@ body {
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
+    --radius: 0.75rem; /* Increased radius for softer corners */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -44,37 +44,38 @@ body {
   }
 
   .dark {
-    --background: 218 71% 11%; /* #0A192F */
+    --background: 224 71% 4%; /* #050A1A - Very Dark Blue */
     --foreground: 210 40% 98%; /* Light text */
-    --card: 218 60% 15%; /* Slightly lighter dark blue */
+    --card: 224 71% 8%; /* #0A1024 - Slightly lighter dark blue */
     --card-foreground: 210 40% 98%;
-    --popover: 218 71% 11%;
+    --popover: 224 71% 6%; /* Darker popover */
     --popover-foreground: 210 40% 98%;
     --primary: 175 57% 46%; /* #31B6AC - Teal */
     --primary-foreground: 175 57% 96%; /* Very light teal/white */
     --secondary: 163 100% 70%; /* #64FFDA - Light Blue */
     --secondary-foreground: 218 71% 11%; /* Dark Blue text on Light Blue */
-    --muted: 218 50% 20%; /* Muted dark blue */
-    --muted-foreground: 210 40% 65%; /* Lighter muted text */
+    --muted: 224 71% 12%; /* Muted dark blue */
+    --muted-foreground: 210 40% 75%; /* Lighter muted text */
     --accent: 163 100% 80%; /* Lighter version of Light Blue for hover/focus */
     --accent-foreground: 218 71% 11%; /* Dark Blue text on Accent */
-    --destructive: 0 70% 50%; /* Brighter red for dark mode */
+    --destructive: 0 70% 55%; /* Brighter red for dark mode */
     --destructive-foreground: 0 0% 98%;
-    --border: 218 50% 25%; /* Subtle border */
-    --input: 218 50% 25%;
+    --border: 224 71% 15%; /* Subtle border */
+    --input: 224 71% 15%;
     --ring: 163 100% 70%; /* Light Blue ring for focus */
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --sidebar-background: 218 71% 11%; /* Match main background */
+    --radius: 0.75rem; /* Increased radius for softer corners */
+    --sidebar-background: 224 71% 4%; /* Match main background */
     --sidebar-foreground: 210 40% 98%; /* Match main foreground */
     --sidebar-primary: 163 100% 70%; /* Secondary color */
     --sidebar-primary-foreground: 218 71% 11%;
-    --sidebar-accent: 218 50% 20%; /* Muted background for hover */
+    --sidebar-accent: 224 71% 12%; /* Muted background for hover */
     --sidebar-accent-foreground: 163 100% 70%;
-    --sidebar-border: 218 50% 25%;
+    --sidebar-border: 224 71% 15%;
     --sidebar-ring: 163 100% 70%;
   }
 }

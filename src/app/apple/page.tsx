@@ -14,55 +14,63 @@ const ApplePage: NextPage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow container mx-auto px-4 py-12">
-        <section className="mb-12 text-center">
-           <AppleIcon className="w-16 h-16 mx-auto mb-4 text-primary" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">Apple Security Center</h1>
+      <main className="flex-grow container mx-auto px-4 py-16 md:py-20"> {/* Increased padding */}
+        <section className="mb-16 md:mb-20 text-center"> {/* Increased margin */}
+           <AppleIcon className="w-20 h-20 mx-auto mb-6 text-primary" /> {/* Increased size and margin */}
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-primary">Apple Security Center</h1> {/* Increased size */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Explore security features, best practices, and resources dedicated to the Apple ecosystem (iOS, iPadOS, macOS).
           </p>
         </section>
 
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <Card className="bg-card text-card-foreground">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-2xl">
-                <Shield className="w-6 h-6 text-secondary" /> Key Security Features
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16 md:mb-20"> {/* Increased gap and margin */}
+          <Card className="bg-card text-card-foreground rounded-lg shadow-lg overflow-hidden"> {/* Added shadow and overflow */}
+            <CardHeader className="p-6"> {/* Adjusted padding */}
+              <CardTitle className="flex items-center gap-3 text-2xl font-semibold"> {/* Adjusted gap */}
+                <Shield className="w-7 h-7 text-secondary" /> Key Security Features
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="p-6 pt-0 space-y-5"> {/* Adjusted padding and spacing */}
               <div>
-                <h3 className="font-semibold text-lg mb-1">Face ID & Touch ID</h3>
-                <p className="text-muted-foreground text-sm">Secure biometric authentication for device access and payments.</p>
+                <h3 className="font-semibold text-lg mb-1.5">Face ID & Touch ID</h3> {/* Increased margin */}
+                <p className="text-muted-foreground text-sm leading-relaxed"> {/* Added leading-relaxed */}
+                  Secure biometric authentication for device access and payments, providing a seamless and robust layer of protection.
+                </p>
               </div>
                <div>
-                <h3 className="font-semibold text-lg mb-1">App Store Review</h3>
-                <p className="text-muted-foreground text-sm">Rigorous review process to prevent malicious apps.</p>
+                <h3 className="font-semibold text-lg mb-1.5">App Store Review</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  A rigorous review process helps ensure apps meet Apple's standards for privacy, security, and content before reaching users.
+                </p>
               </div>
                <div>
-                <h3 className="font-semibold text-lg mb-1">End-to-End Encryption</h3>
-                <p className="text-muted-foreground text-sm">Protecting your iMessages, FaceTime calls, and iCloud data.</p>
+                <h3 className="font-semibold text-lg mb-1.5">End-to-End Encryption</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Protecting your iMessages, FaceTime calls, and sensitive iCloud data so only you and the recipient can access them.
+                </p>
               </div>
                <div>
-                <h3 className="font-semibold text-lg mb-1">Privacy Controls</h3>
-                <p className="text-muted-foreground text-sm">Granular control over app permissions for location, camera, microphone, etc.</p>
+                <h3 className="font-semibold text-lg mb-1.5">Privacy Controls</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                  Granular control over app permissions for location, camera, microphone, photos, and more, putting you in charge of your data.
+                </p>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-card text-card-foreground">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-2xl">
-                <FileText className="w-6 h-6 text-secondary" /> Download: Apple iOS Security Enhancer
+          <Card className="bg-card text-card-foreground rounded-lg shadow-lg overflow-hidden"> {/* Added shadow and overflow */}
+            <CardHeader className="p-6"> {/* Adjusted padding */}
+              <CardTitle className="flex items-center gap-3 text-2xl font-semibold"> {/* Adjusted gap */}
+                <FileText className="w-7 h-7 text-secondary" /> Download: Apple iOS Security Enhancer
               </CardTitle>
-              <CardDescription>
+              <CardDescription className="pt-2 text-base"> {/* Adjusted padding and size */}
                  Elevate your iOS 16+ device security effortlessly. LAUNCHING [terms date]
               </CardDescription>
             </CardHeader>
-            <CardContent className="flex flex-col items-start space-y-4">
-               <div className="text-muted-foreground text-sm space-y-2">
+            <CardContent className="flex flex-col items-center p-6 pt-0 space-y-6"> {/* Centered items, adjusted padding/spacing */}
+               <div className="text-muted-foreground text-sm space-y-3 text-left w-full"> {/* Left-aligned text */}
                   <p>Our debut tool integrates Apple's certified Tailscale technology to fortify your backend, ensuring:</p>
-                  <ul className="list-disc list-inside pl-4 space-y-1">
+                  <ul className="list-disc list-inside pl-4 space-y-1.5">
                     <li>Backdoor hacking prevention</li>
                     <li>Remote port invisibility</li>
                     <li>Seamless integration with Apple's network</li>
@@ -75,13 +83,13 @@ const ApplePage: NextPage = () => {
                 asChild
                 variant="secondary"
                 size="lg"
-                className="hover:bg-accent hover:text-accent-foreground transition-colors mt-4 self-center"
+                className="hover:bg-accent hover:text-accent-foreground transition-colors mt-4 w-full max-w-xs" /* Full width on small, max-width on larger */
               >
                 <a href={googleDriveLink} target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-5 w-5" /> Download Enhancer (PDF)
                 </a>
               </Button>
-               <p className="text-xs text-muted-foreground text-center mt-2 self-center">
+               <p className="text-xs text-muted-foreground text-center mt-2">
                 Note: This will open a Google Drive link in a new tab.
                </p>
             </CardContent>
@@ -90,7 +98,7 @@ const ApplePage: NextPage = () => {
 
          <section className="text-center">
              <Link href="/" passHref>
-                <Button variant="outline">Back to Home</Button>
+                <Button variant="outline" size="lg">Back to Home</Button> {/* Larger button */}
              </Link>
         </section>
 

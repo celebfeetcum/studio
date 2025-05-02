@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Smartphone, ShieldCheck, Lock, AppWindow } from 'lucide-react'; // Icons
+import { Smartphone, ShieldCheck, Lock, AppWindow, CheckCircle } from 'lucide-react'; // Added CheckCircle
 import Header from '@/components/layout/header'; // Import Header
 import Footer from '@/components/layout/footer'; // Import Footer
 
@@ -11,71 +11,79 @@ const AndroidPage: NextPage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="flex-grow container mx-auto px-4 py-12">
-         <section className="mb-12 text-center">
-           <Smartphone className="w-16 h-16 mx-auto mb-4 text-primary" />
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 text-primary">Android Security Center</h1>
+      <main className="flex-grow container mx-auto px-4 py-16 md:py-20"> {/* Increased padding */}
+         <section className="mb-16 md:mb-20 text-center"> {/* Increased margin */}
+           <Smartphone className="w-20 h-20 mx-auto mb-6 text-primary" /> {/* Increased size and margin */}
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 text-primary">Android Security Center</h1> {/* Increased size */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Understand Android's security mechanisms, common threats, and how to enhance the safety of your devices.
           </p>
         </section>
 
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-           <Card className="bg-card text-card-foreground">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-2xl">
-                <ShieldCheck className="w-6 h-6 text-secondary" /> Core Security Pillars
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16 md:mb-20"> {/* Increased gap and margin */}
+           <Card className="bg-card text-card-foreground rounded-lg shadow-lg overflow-hidden"> {/* Added shadow and overflow */}
+            <CardHeader className="p-6"> {/* Adjusted padding */}
+              <CardTitle className="flex items-center gap-3 text-2xl font-semibold"> {/* Adjusted gap */}
+                <ShieldCheck className="w-7 h-7 text-secondary" /> Core Security Pillars
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="p-6 pt-0 space-y-5"> {/* Adjusted padding and spacing */}
               <div>
-                <h3 className="font-semibold text-lg mb-1">Google Play Protect</h3>
-                <p className="text-muted-foreground text-sm">Scans apps for malware before and after installation.</p>
+                <h3 className="font-semibold text-lg mb-1.5">Google Play Protect</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed"> {/* Added leading-relaxed */}
+                    Actively scans apps for malware and harmful behavior before and after installation, providing continuous protection.
+                </p>
               </div>
                <div>
-                <h3 className="font-semibold text-lg mb-1">Regular Security Updates</h3>
-                <p className="text-muted-foreground text-sm">Monthly patches address known vulnerabilities (availability varies by manufacturer).</p>
+                <h3 className="font-semibold text-lg mb-1.5">Regular Security Updates</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                    Monthly security patches address known vulnerabilities. Prompt installation is crucial (availability varies by manufacturer).
+                </p>
               </div>
                <div>
-                <h3 className="font-semibold text-lg mb-1">App Permissions</h3>
-                <p className="text-muted-foreground text-sm">User control over what data and features apps can access.</p>
+                <h3 className="font-semibold text-lg mb-1.5">App Permissions</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                    Granular user control over what data (like location, contacts) and device features (like camera, microphone) apps can access.
+                </p>
               </div>
                <div>
-                <h3 className="font-semibold text-lg mb-1">Verified Boot</h3>
-                <p className="text-muted-foreground text-sm">Ensures the operating system hasn't been tampered with during startup.</p>
+                <h3 className="font-semibold text-lg mb-1.5">Verified Boot</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed">
+                    Ensures the device's software, from the hardware root of trust up to the operating system, hasn't been tampered with during startup.
+                </p>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="bg-card text-card-foreground">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2 text-2xl">
-                <Lock className="w-6 h-6 text-secondary" /> Best Practices
+          <Card className="bg-card text-card-foreground rounded-lg shadow-lg overflow-hidden"> {/* Added shadow and overflow */}
+            <CardHeader className="p-6"> {/* Adjusted padding */}
+              <CardTitle className="flex items-center gap-3 text-2xl font-semibold"> {/* Adjusted gap */}
+                <Lock className="w-7 h-7 text-secondary" /> Best Practices
               </CardTitle>
-               <CardDescription>
-                Tips for keeping your Android device secure.
+               <CardDescription className="pt-2 text-base"> {/* Adjusted padding and size */}
+                Essential tips for keeping your Android device secure.
               </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-3">
-                 <p className="text-muted-foreground text-sm flex items-start gap-2">
-                    <AppWindow className="w-4 h-4 mt-1 text-secondary flex-shrink-0"/>
-                    <span>Only install apps from trusted sources like the Google Play Store.</span>
+            <CardContent className="p-6 pt-0 space-y-4"> {/* Adjusted padding and spacing */}
+                 <p className="text-muted-foreground text-sm flex items-start gap-3"> {/* Increased gap */}
+                    <CheckCircle className="w-5 h-5 mt-0.5 text-secondary flex-shrink-0"/> {/* Used CheckCircle */}
+                    <span>Only install apps from trusted sources like the Google Play Store. Verify developer reputation.</span>
                  </p>
-                <p className="text-muted-foreground text-sm flex items-start gap-2">
-                     <ShieldCheck className="w-4 h-4 mt-1 text-secondary flex-shrink-0"/>
-                    <span>Keep your operating system and apps updated.</span>
+                <p className="text-muted-foreground text-sm flex items-start gap-3">
+                     <CheckCircle className="w-5 h-5 mt-0.5 text-secondary flex-shrink-0"/>
+                    <span>Keep your operating system and all apps updated promptly to patch vulnerabilities.</span>
                  </p>
-                 <p className="text-muted-foreground text-sm flex items-start gap-2">
-                    <Lock className="w-4 h-4 mt-1 text-secondary flex-shrink-0"/>
-                    <span>Use a strong screen lock (PIN, pattern, password, or biometric).</span>
+                 <p className="text-muted-foreground text-sm flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 mt-0.5 text-secondary flex-shrink-0"/>
+                    <span>Use a strong screen lock (complex PIN, strong password, or reliable biometrics) and enable Find My Device.</span>
                  </p>
-                 <p className="text-muted-foreground text-sm flex items-start gap-2">
-                    <Smartphone className="w-4 h-4 mt-1 text-secondary flex-shrink-0"/>
-                   <span>Review app permissions regularly and revoke unnecessary ones.</span>
+                 <p className="text-muted-foreground text-sm flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 mt-0.5 text-secondary flex-shrink-0"/>
+                   <span>Regularly review app permissions. Revoke access for apps that don't strictly require it.</span>
                  </p>
-                 <p className="text-muted-foreground text-sm flex items-start gap-2">
-                    <ShieldCheck className="w-4 h-4 mt-1 text-secondary flex-shrink-0"/>
-                    <span>Be cautious of phishing attempts via email, SMS, or websites.</span>
+                 <p className="text-muted-foreground text-sm flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 mt-0.5 text-secondary flex-shrink-0"/>
+                    <span>Be cautious of phishing attempts via email, SMS, or malicious websites. Don't click suspicious links.</span>
                  </p>
             </CardContent>
           </Card>
@@ -83,7 +91,7 @@ const AndroidPage: NextPage = () => {
 
          <section className="text-center">
              <Link href="/" passHref>
-                <Button variant="outline">Back to Home</Button>
+                <Button variant="outline" size="lg">Back to Home</Button> {/* Larger button */}
              </Link>
         </section>
 

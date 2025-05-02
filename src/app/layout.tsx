@@ -1,10 +1,14 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter } from 'next/font/google'; // Changed font to Inter
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from "@/components/ui/toaster"; // Import Toaster
 
-const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+// Configure Inter font
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter', // Use --font-inter CSS variable
+});
 
 export const metadata: Metadata = {
   title: 'MobileSecurity.site Hub', // Updated title
@@ -20,8 +24,8 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased',
-          inter.variable
+          'min-h-screen bg-background font-sans antialiased', // Use font-sans which defaults to Inter via Tailwind config
+          inter.variable // Make the CSS variable available
         )}
       >
         {children}

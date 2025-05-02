@@ -8,8 +8,8 @@ import Footer from '@/components/layout/footer'; // Import Footer
 
 
 const ApplePage: NextPage = () => {
-  // Placeholder link - replace with the actual URL to the downloadable file
-  const downloadLink = "https://example.com/path/to/your/downloadable/file.pdf"; // REPLACE with actual file URL
+  // Updated download link
+  const downloadLink = "https://drive.google.com/file/d/1jm79EO4-uPAsUp9AxmFcH7W8RoBrySRn/view?usp=sharing"; // Updated file URL
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -86,11 +86,11 @@ const ApplePage: NextPage = () => {
                 className="hover:bg-accent hover:text-accent-foreground transition-colors mt-4 w-full max-w-xs" /* Full width on small, max-width on larger */
               >
                 <a href={downloadLink} target="_blank" rel="noopener noreferrer">
-                  <Download className="mr-2 h-5 w-5" /> Download Enhancer (PDF)
+                  <Download className="mr-2 h-5 w-5" /> Download Enhancer {/* Removed (PDF) */}
                 </a>
               </Button>
                <p className="text-xs text-muted-foreground text-center mt-2">
-                Note: This link will open in a new tab. Ensure you have a PDF reader.
+                Note: This link will open in a new tab.
                </p>
             </CardContent>
           </Card>

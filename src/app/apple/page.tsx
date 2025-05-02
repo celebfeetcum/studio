@@ -8,8 +8,8 @@ import Footer from '@/components/layout/footer'; // Import Footer
 
 
 const ApplePage: NextPage = () => {
-  // Placeholder Google Drive link - replace with the actual shareable link
-  const googleDriveLink = "https://docs.google.com/document/d/your_file_id/edit?usp=sharing"; // REPLACE your_file_id
+  // Placeholder link - replace with the actual URL to the downloadable file
+  const downloadLink = "https://example.com/path/to/your/downloadable/file.pdf"; // REPLACE with actual file URL
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -78,19 +78,19 @@ const ApplePage: NextPage = () => {
                   <p>No advanced security operations knowledge required.</p>
                   <p>One-click install - all you need is a valid email for your device *</p>
                </div>
-              {/* Link the button to the Google Drive file */}
+              {/* Link the button to the downloadable file */}
               <Button
                 asChild
                 variant="secondary"
                 size="lg"
                 className="hover:bg-accent hover:text-accent-foreground transition-colors mt-4 w-full max-w-xs" /* Full width on small, max-width on larger */
               >
-                <a href={googleDriveLink} target="_blank" rel="noopener noreferrer">
+                <a href={downloadLink} target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-5 w-5" /> Download Enhancer (PDF)
                 </a>
               </Button>
                <p className="text-xs text-muted-foreground text-center mt-2">
-                Note: This will open a Google Drive link in a new tab.
+                Note: This link will open in a new tab. Ensure you have a PDF reader.
                </p>
             </CardContent>
           </Card>

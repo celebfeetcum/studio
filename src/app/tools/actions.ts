@@ -16,13 +16,16 @@ const LogIpInputSchema = z.object({
 type LogIpInput = z.infer<typeof LogIpInputSchema>;
 
 /**
- * Logs the provided IP address and user agent on the server.
- * IMPORTANT: This is a basic example logging to the console.
- * In a real application, you would replace console.log with logging to a
- * database, a dedicated logging service, or a file.
+ * Logs the provided IP address and user agent.
  *
- * Be mindful of privacy regulations (like GDPR, CCPA) when logging user data.
- * Ensure you have a legitimate basis for collecting and storing this information.
+ * IMPORTANT: This function currently logs to the server console.
+ * For persistent storage (required for "research and leads"), you need to
+ * integrate this with a database (e.g., Firestore, PostgreSQL, MongoDB).
+ * Replace the console.log statements below with your database insertion logic.
+ *
+ * Be mindful of privacy regulations (like GDPR, CCPA) when logging and storing user data.
+ * Ensure you have a legitimate basis for collecting and storing this information,
+ * and implement appropriate security measures.
  *
  * !!! THIS IMPLEMENTATION DOES NOT PERFORM KEYLOGGING OR UNSOLICITED CLIPBOARD ACCESS !!!
  * It only logs the IP address and User-Agent string provided by the client.
@@ -36,16 +39,35 @@ export async function logIpAddress(input: LogIpInput): Promise<{ success: boolea
   }
 
   const { ip, userAgent } = validation.data;
+  const timestamp = new Date();
 
-  console.log("--- IP Check Log ---");
-  console.log(`Timestamp: ${new Date().toISOString()}`);
+  // --- Database Integration Point ---
+  // Replace the console logs below with your database insertion logic.
+  // Example using a hypothetical 'db' object (e.g., Prisma, Firestore client):
+  /*
+  try {
+    await db.collection('ip_logs').insertOne({
+      ipAddress: ip,
+      userAgent: userAgent,
+      timestamp: timestamp,
+    });
+    console.log(`Successfully logged IP: ${ip}`);
+    return { success: true };
+  } catch (error) {
+    console.error("Database logging failed:", error);
+    return { success: false, message: "Failed to log data." };
+  }
+  */
+
+  // Current implementation (logs to console only):
+  console.log("--- IP Check Log (Console Only) ---");
+  console.log(`Timestamp: ${timestamp.toISOString()}`);
   console.log(`IP Address: ${ip ?? 'N/A'}`);
   console.log(`User Agent: ${userAgent ?? 'N/A'}`);
-  console.log("--------------------");
+  console.log("-----------------------------------");
+  console.warn("IP logging is currently only outputting to the console. Implement database persistence for storage.");
 
-  // In a real app, replace console.log with database insertion or logging service call
-  // e.g., await db.collection('ip_logs').insertOne({ ip, userAgent, timestamp: new Date() });
-
-  // Simulating success
-  return { success: true };
+  // Simulate success for now, as it logged to console.
+  // Replace this with the actual result from your database operation.
+  return { success: true, message: "Data logged to console (Persistence not implemented)." };
 }

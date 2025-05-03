@@ -31,17 +31,27 @@ const ToolsPage: NextPage = () => {
       setIpAddress(fetchedIp);
 
       // Log the IP address and user agent server-side
-      await logIpAddress({
+      const logResult = await logIpAddress({
         ip: fetchedIp,
         userAgent: navigator.userAgent,
        });
-       // Optionally notify user logging occurred (or remove if unwanted)
-       /*
-       toast({
-         title: "Info Logged",
-         description: "Your IP and browser information have been recorded.",
-       });
-       */
+
+       // Notify user based on server action result
+       if (logResult.success) {
+          // Modify toast to reflect current state
+          toast({
+            title: "Info Logged (Console)",
+            description: logResult.message || "Your IP/browser info logged to server console. DB persistence needed.",
+            variant: "default", // Use default variant for info
+          });
+       } else {
+          toast({
+            title: "Logging Error",
+            description: logResult.message || "Could not log IP information server-side.",
+            variant: "destructive",
+          });
+       }
+
 
     } catch (error) {
       console.error('Error fetching IP:', error);
@@ -57,6 +67,7 @@ const ToolsPage: NextPage = () => {
   };
 
   useEffect(() => {
+    // Avoid hydration mismatch by fetching IP client-side after mount
     fetchIp();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Run only once on component mount
@@ -100,17 +111,17 @@ const ToolsPage: NextPage = () => {
                 <Wifi className="w-7 h-7 text-secondary" /> Check My Public IP Address
               </CardTitle>
               <CardDescription className="pt-2 text-base">
-                View the public IP address your device is currently using to connect to the internet. This information is logged for research purposes.
+                View the public IP address your device is currently using. This information is logged server-side (currently to console) for research purposes.
               </CardDescription>
             </CardHeader>
             <CardContent className="p-6 pt-0 space-y-4">
               <div className="flex items-center space-x-2">
-                {isLoading ? (
+                {isLoading || ipAddress === null ? ( // Show skeleton if loading or ipAddress is strictly null
                     <Skeleton className="h-10 flex-grow" />
                 ) : (
                     <Input
                         readOnly
-                        value={ipAddress ?? 'Loading...'}
+                        value={ipAddress} // Directly use ipAddress state
                         className="flex-grow text-lg font-mono bg-muted" // Style the input
                     />
                 )}

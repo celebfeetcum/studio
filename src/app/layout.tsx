@@ -21,6 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    // Apply dark mode by default
     <html lang="en" className="dark">
       <body
         className={cn(

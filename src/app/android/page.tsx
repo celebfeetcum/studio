@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Smartphone, ShieldCheck, Lock, AppWindow, CheckCircle } from 'lucide-react'; // Added CheckCircle
+import { Smartphone, ShieldCheck, Lock, CheckCircle } from 'lucide-react'; // Added CheckCircle
 import Header from '@/components/layout/header'; // Import Header
 import Footer from '@/components/layout/footer'; // Import Footer
 

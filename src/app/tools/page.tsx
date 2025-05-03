@@ -13,7 +13,7 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { logIpAddress } from './actions'; // Import the server action
 import { Skeleton } from '@/components/ui/skeleton'; // Import Skeleton
-import { Separator } from '@/components/ui/separator'; // Import Separator
+// Separator is not used visually here, but kept for potential future use if needed.
 
 const ToolsPage: NextPage = () => {
   const [ipAddress, setIpAddress] = useState<string | null>(null);

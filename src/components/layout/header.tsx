@@ -1,8 +1,9 @@
+
 'use client'; // Add this directive
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Vault } from 'lucide-react'; // Changed icon from Shield to Vault
+import { Vault, Server } from 'lucide-react'; // Changed icon from Shield to Vault, Added Server for Tools
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"; // Import ShadCN navigation
 import { cn } from '@/lib/utils';
 
@@ -49,6 +50,14 @@ const Header = () => {
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
+             {/* Add Tools Link */}
+            <NavigationMenuItem>
+              <Link href="/tools" legacyBehavior passHref>
+                <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent hover:bg-accent/50 text-base font-medium text-muted-foreground hover:text-foreground")}>
+                  Tools
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
 
@@ -60,3 +69,4 @@ const Header = () => {
 };
 
 export default Header;
+
